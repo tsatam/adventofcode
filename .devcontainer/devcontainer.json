@@ -1,6 +1,6 @@
 {
-    "image": "docker.io/library/golang:1.21", 
-    "name": "adventofcode-2023",
+    "image": "docker.io/library/golang:1.23", 
+    "name": "adventofcode-2024",
     "workspaceMount": "",
     "runArgs": [
         "--userns=keep-id",
