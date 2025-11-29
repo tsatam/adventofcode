@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/tsatam/adventofcode-2023/day/07/common"
+	"github.com/tsatam/adventofcode/2023/07/common"
 )
 
 func TestSortRounds(t *testing.T) {

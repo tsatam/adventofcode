@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/tsatam/adventofcode-2023/common/fp"
-	"github.com/tsatam/adventofcode-2023/day/07/common"
-	"github.com/tsatam/adventofcode-2023/day/07/joker"
-	"github.com/tsatam/adventofcode-2023/day/07/vanilla"
+	"github.com/tsatam/adventofcode/2023/07/common"
+	"github.com/tsatam/adventofcode/2023/07/joker"
+	"github.com/tsatam/adventofcode/2023/07/vanilla"
+	"github.com/tsatam/adventofcode/common/fp"
 )
 
 var (

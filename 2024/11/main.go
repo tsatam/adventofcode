@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/tsatam/adventofcode-2024/common/fp"
+	"github.com/tsatam/adventofcode/common/fp"
 )
 
 var (

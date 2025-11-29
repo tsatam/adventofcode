@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/tsatam/adventofcode-2023/common/fp"
+	"github.com/tsatam/adventofcode/common/fp"
 )
 
 var (

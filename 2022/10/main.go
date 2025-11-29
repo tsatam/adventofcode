@@ -1,11 +1,12 @@
 package main
 
 import (
-	cartesian "common/cartesian"
 	_ "embed"
 	"fmt"
 	"strconv"
 	"strings"
+
+	cartesian "github.com/tsatam/adventofcode/common/cartesian"
 )
 
 var (

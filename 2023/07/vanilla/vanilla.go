@@ -3,7 +3,7 @@ package vanilla
 import (
 	"slices"
 
-	"github.com/tsatam/adventofcode-2023/day/07/common"
+	"github.com/tsatam/adventofcode/2023/07/common"
 )
 
 var (

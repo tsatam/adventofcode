@@ -72,8 +72,6 @@ func TestSumFrom(t *testing.T) {
 		t.Errorf("got %d, want %d", got, want)
 	}
 }
-<<<<<<< HEAD
-=======
 
 func TestFlatten(t *testing.T) {
 	in := [][]int{{1, 2, 3}, {4, 5}}
@@ -82,4 +80,3 @@ func TestFlatten(t *testing.T) {
 
 	assert.Equal(t, want, got)
 }
->>>>>>> refs/heads/2024

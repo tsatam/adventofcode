@@ -1,3 +1,5 @@
-module github.com/tsatam/adventofcode-2023/day/10
+module github.com/tsatam/adventofcode/2023/10
 
-go 1.21.4
+go 1.22.0
+
+toolchain go1.24.6

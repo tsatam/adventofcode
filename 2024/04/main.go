@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/tsatam/adventofcode-2024/common/cartesian"
-	"github.com/tsatam/adventofcode-2024/common/fp"
+	"github.com/tsatam/adventofcode/common/cartesian"
+	"github.com/tsatam/adventofcode/common/fp"
 )
 
 var (

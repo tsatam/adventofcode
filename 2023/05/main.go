@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/tsatam/adventofcode-2023/common/fp"
+	"github.com/tsatam/adventofcode/common/fp"
 	"golang.org/x/exp/slices"
 )
 

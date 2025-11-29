@@ -1,12 +1,13 @@
 package main
 
 import (
-	c "common/cartesian"
-	s "common/set"
 	_ "embed"
 	"fmt"
 	"log"
 	"strings"
+
+	c "github.com/tsatam/adventofcode/common/cartesian"
+	s "github.com/tsatam/adventofcode/common/set"
 )
 
 var (

@@ -1,12 +1,14 @@
 package main
 
 import (
-	c "common/cartesian"
-	mpq "common/min_priority_queue"
 	_ "embed"
 	"fmt"
 	"math"
 	"strings"
+
+	mpq "github.com/tsatam/adventofcode/common/min_priority_queue"
+
+	c "github.com/tsatam/adventofcode/common/cartesian"
 )
 
 var (

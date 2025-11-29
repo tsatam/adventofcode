@@ -1,13 +1,14 @@
+YEAR ?= $(shell date "+%Y")
 DAY ?= $(shell date "+%d")
-DAY_DIR ?= ./day/${DAY}
+DAY_DIR ?= ./${YEAR}/${DAY}
 
 .ONESHELL:
 
 new:
 	mkdir -p ${DAY_DIR}
-	cd ${DAY_DIR} && \
+	pushd ${DAY_DIR} && \
 		go mod init "github.com/tsatam/adventofcode/day/${DAY}" && \
-		cd ../../
+		popd
 	go work use ${DAY_DIR}
 
 test:

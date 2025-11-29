@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/tsatam/adventofcode-2024/common/cartesian"
+	"github.com/tsatam/adventofcode/common/cartesian"
 )
 
 func TestHandlePart1(t *testing.T) {

@@ -6,8 +6,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/tsatam/adventofcode-2023/common/cartesian"
-	"github.com/tsatam/adventofcode-2023/common/fp"
+	"github.com/tsatam/adventofcode/common/cartesian"
+	"github.com/tsatam/adventofcode/common/fp"
 )
 
 var (

@@ -1,8 +1,8 @@
 package main
 
 import (
-	c "common/cartesian"
-	s "common/set"
+	c "github.com/tsatam/adventofcode/common/cartesian"
+	s "github.com/tsatam/adventofcode/common/set"
 )
 
 type Rock struct {

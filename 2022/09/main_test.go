@@ -1,10 +1,11 @@
 package main
 
 import (
-	cartesian "common/cartesian"
 	"fmt"
 	"reflect"
 	"testing"
+
+	cartesian "github.com/tsatam/adventofcode/common/cartesian"
 )
 
 func TestParseInstructions(t *testing.T) {

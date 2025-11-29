@@ -1,9 +1,10 @@
 package main
 
 import (
-	c "common/cartesian"
 	"reflect"
 	"testing"
+
+	c "github.com/tsatam/adventofcode/common/cartesian"
 )
 
 func TestParseInput(t *testing.T) {

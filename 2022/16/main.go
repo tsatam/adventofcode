@@ -1,15 +1,16 @@
 package main
 
 import (
-	maxpq "common/max_priority_queue"
-	minpq "common/min_priority_queue"
-	"common/set"
 	_ "embed"
 	"fmt"
 	"log"
 	"regexp"
 	"strconv"
 	"strings"
+
+	maxpq "github.com/tsatam/adventofcode/common/max_priority_queue"
+	minpq "github.com/tsatam/adventofcode/common/min_priority_queue"
+	"github.com/tsatam/adventofcode/common/set"
 )
 
 var (

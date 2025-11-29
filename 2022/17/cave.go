@@ -2,8 +2,9 @@ package main
 
 import (
 	"bytes"
-	c "common/cartesian"
-	"common/set"
+
+	c "github.com/tsatam/adventofcode/common/cartesian"
+	"github.com/tsatam/adventofcode/common/set"
 )
 
 const (

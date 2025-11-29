@@ -1,13 +1,14 @@
 package main
 
 import (
-	minpq "common/min_priority_queue"
-	s "common/set"
 	_ "embed"
 	"fmt"
 	"math"
 	"strconv"
 	"strings"
+
+	minpq "github.com/tsatam/adventofcode/common/min_priority_queue"
+	s "github.com/tsatam/adventofcode/common/set"
 )
 
 var (
