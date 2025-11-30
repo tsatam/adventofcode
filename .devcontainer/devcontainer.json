@@ -1,10 +1,10 @@
 {
-    "image": "docker.io/library/golang:1.23", 
-    "name": "adventofcode",
-    "workspaceMount": "",
-    "runArgs": [
-        "--userns=keep-id",
-        "--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"
+	"image": "docker.io/library/golang:1.25",
+	"name": "adventofcode",
+	"workspaceMount": "",
+	"runArgs": [
+		"--userns=keep-id",
+		"--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"
 	],
 	"customizations": {
 		"vscode": {

@@ -1,6 +1,6 @@
 module github.com/tsatam/adventofcode/common
 
-go 1.23.3
+go 1.25.4
 
 require (
 	github.com/stretchr/testify v1.10.0
