@@ -6,9 +6,9 @@ DAY_DIR ?= ./${YEAR}/${DAY}
 
 new:
 	mkdir -p ${DAY_DIR}
-	pushd ${DAY_DIR} && \
-		go mod init "github.com/tsatam/adventofcode/day/${DAY}" && \
-		popd
+	cd ${DAY_DIR} && \
+		go mod init "github.com/tsatam/adventofcode/${YEAR}/${DAY}" && \
+		cd ../..
 	go work use ${DAY_DIR}
 
 test:
