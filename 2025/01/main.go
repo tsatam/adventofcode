@@ -19,12 +19,20 @@ type performed struct {
 
 func main() {
 	fmt.Printf("Part 1: %d\n", handlePart1(input))
+	fmt.Printf("Part 2: %d\n", handlePart2(input))
 }
 
 func handlePart1(input string) int {
 	lines := readInput(input)
 	rotations := fp.Map(lines, parseLine)
 	perf := fp.Reduce(rotations, performed{pos: 50}, perform)
+	return perf.timesZero
+}
+
+func handlePart2(input string) int {
+	lines := readInput(input)
+	rotations := fp.Map(lines, parseLine)
+	perf := fp.Reduce(rotations, performed{pos: 50}, performCLICK)
 	return perf.timesZero
 }
 
@@ -54,4 +62,28 @@ func perform(curr performed, next int) performed {
 		curr.timesZero++
 	}
 	return curr
+}
+
+func performCLICK(curr performed, next int) performed {
+	timesZero := curr.timesZero
+	pos := curr.pos + next
+
+	for ; pos < 0; timesZero++ {
+		pos += 100
+	}
+	for ; pos >= 100; timesZero++ {
+		pos -= 100
+	}
+
+	if curr.pos == 0 && pos != 0 {
+		if next < 0 {
+			timesZero--
+		}
+	}
+
+	if pos == 0 && next < 0 && next%100 != 0 {
+		timesZero++
+	}
+
+	return performed{pos: pos, timesZero: timesZero}
 }
