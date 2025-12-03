@@ -3,6 +3,7 @@ package main
 import (
 	_ "embed"
 	"fmt"
+	"math"
 	"strings"
 
 	"github.com/tsatam/adventofcode/common/fp"
@@ -15,11 +16,18 @@ var (
 
 func main() {
 	fmt.Printf("Part 1: %d\n", handlePart1(input))
+	fmt.Printf("Part 2: %d\n", handlePart2(input))
 }
 
 func handlePart1(input string) int {
 	banks := readInput(input)
-	joltages := fp.Map(banks, joltageForBank)
+	joltages := fp.Map(banks, joltageForBank(2))
+	return fp.Sum(joltages)
+}
+
+func handlePart2(input string) int {
+	banks := readInput(input)
+	joltages := fp.Map(banks, joltageForBank(12))
 	return fp.Sum(joltages)
 }
 
@@ -27,25 +35,33 @@ func readInput(input string) []string {
 	return strings.Split(strings.TrimSpace(input), "\n")
 }
 
-func joltageForBank(bank string) int {
-
-	largestOne := -1
-	largestOneIdx := -1
-	for i := 0; largestOne < 9 && i < len(bank)-1; i++ {
-		curr := int(bank[i] - '0')
-		if curr > largestOne {
-			largestOne = curr
-			largestOneIdx = i
+func joltageForBank(digits int) func(bank string) int {
+	return func(bank string) int {
+		largests := make([]int, digits)
+		largestsIdx := make([]int, digits)
+		for i := range largestsIdx {
+			largestsIdx[i] = -1
 		}
-	}
 
-	largestTwo := -1
-	for i := largestOneIdx + 1; largestTwo < 9 && i < len(bank); i++ {
-		curr := int(bank[i] - '0')
-		if curr > largestTwo {
-			largestTwo = curr
+		for digit := digits - 1; digit >= 0; digit-- {
+			start := 0
+			if digit < digits-1 && largestsIdx[digit+1] != -1 {
+				start = largestsIdx[digit+1] + 1
+			}
+
+			for i := start; largests[digit] < 9 && i < len(bank)-digit; i++ {
+				curr := int(bank[i] - '0')
+				if curr > largests[digit] {
+					largests[digit] = curr
+					largestsIdx[digit] = i
+				}
+			}
 		}
-	}
 
-	return 10*largestOne + largestTwo
+		value := 0
+		for digit := 0; digit < digits; digit = digit + 1 {
+			value += largests[digit] * int(math.Pow10(digit))
+		}
+		return value
+	}
 }
