@@ -18,20 +18,43 @@ type grid [][]int
 
 func main() {
 	fmt.Printf("Part 1: %d\n", handlePart1(input))
+	fmt.Printf("Part 2: %d\n", handlePart2(input))
 }
 
 func handlePart1(input string) int {
 	g := readInput(input)
 
-	accessible := 0
+	_, accessible := passthrough(g)
+	return accessible
+}
+
+func handlePart2(input string) int {
+	g := readInput(input)
+
+	total := 0
+	for g, removed := passthrough(g); removed > 0; g, removed = passthrough(g) {
+		total += removed
+	}
+	return total
+}
+
+func passthrough(g grid) (grid, int) {
+	removed := 0
+	toRemove := []cartesian.Point{}
 	for y := range len(g) {
 		for x := range len(g[y]) {
-			if g.canAccessRoll(cartesian.Point{X: x, Y: y}) {
-				accessible++
+			p := cartesian.Point{X: x, Y: y}
+			if g.canAccessRoll(p) {
+				removed++
+				toRemove = append(toRemove, p)
 			}
 		}
 	}
-	return accessible
+
+	for _, p := range toRemove {
+		g.remove(p)
+	}
+	return g, removed
 }
 
 func readInput(input string) grid {
@@ -49,6 +72,10 @@ func readInput(input string) grid {
 			}
 		})
 	})
+}
+
+func (g grid) remove(p cartesian.Point) {
+	g[p.Y][p.X] = 0
 }
 
 func (g grid) canAccessRoll(p cartesian.Point) bool {
